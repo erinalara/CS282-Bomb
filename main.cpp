@@ -1,6 +1,6 @@
 #include <iostream>
 #include <random>
-#include "bomb.cpp"
+#include "bomb.h"
 
 using namespace std;
 int main() {
