@@ -46,17 +46,25 @@ double calculateD(double gun, double angle) {
 }
 
 bool bombHit(double r, double distance) {
+    double diff;
     if (distance < r) {
-        cout << "You were " << r - distance << "m short. " << endl;
-        return false;
+        diff = distance - r;
     }
-    else if (distance > r) {
-        cout << "You were " << distance - r << "m long. " << endl;
-        return false;
+    else {
+        diff = r - distance;
     }
-    else if ((distance - r <= 1.0) || (r - distance <= 1.0)) {
+    if ((diff <= 1.0) & (diff >= -1.0)) {
         cout << "It's a hit!";
         return true;
     }
+    else {
+        if (distance < r) {
+            cout << "You were " << r - distance << "m short. " << endl;
+        }
+        else {
+            cout << "You were " << distance - r << "m long. " << endl;
+        }
+    }
+    return false;
 }
 
